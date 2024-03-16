@@ -1,0 +1,151 @@
+*,
+*::after,
+*::before{
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
+html{
+    height: 100%;
+}
+
+body{
+    height: 100%;
+    counter-reset: hotDuck;
+    background-image: url("../img/Games_Duck_Hunt_Nintendo_Dendy_Nes_025749_9.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0 bottom;
+    overflow: hidden;
+    cursor: url('../img/free-icon-target-11906216.png'), crosshair;
+}
+
+.audio{
+    position:absolute;
+    left: 0;
+    top: 5%;
+}
+
+.count{
+    position: absolute;
+    left: 50%;
+    bottom: 5%;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 60px;
+    color: white;
+    transform: translateX(-50%);
+}
+
+.count::after{
+    content: counter(hotDuck);
+}
+
+.duck{
+    width: 62px;
+    height: 56px;
+    overflow: hidden;
+    position: relative;
+    top: 50%;
+    left: -200px;
+}
+
+.duck label{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background-image: url("../img/duck_hunt_bird_big2.gif");
+    background-repeat: no-repeat;
+    cursor: url('../img/free-icon-target-11906216.png'), crosshair;
+}
+
+.duck input{
+    position: absolute;
+    left: -100px;
+}
+
+input:checked{
+    counter-increment: hotDuck;
+}
+
+input:checked + label{
+    display: none;
+    
+}
+
+.duck1{
+    animation-name: fly1;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.duck2{
+    animation-name: fly1;
+    animation-duration: 15s;
+    animation-delay: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(0.6, 0.04, 0.98, 0.335);
+}
+
+.duck3{
+    animation-name: fly1;
+    animation-duration: 12s;
+    animation-delay: 7s;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.duck4{
+    animation-name: fly2;
+    animation-duration: 11s;
+    animation-delay: 9s;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+
+@keyframes fly1{
+    0%{
+        top: 50%;
+        left: -5%;
+    }
+    25%{
+        top: 10%;
+        left: 25%;
+    }
+    70%{
+        top: 90%;
+        left: 70%; 
+    }
+    100%{
+        top: 10%;
+        left: 110%;
+    }
+}
+
+@keyframes fly2{
+    0%{
+        top: 40%;
+        left: -5%;
+    }
+    25%{
+        top: 20%;
+        left: 25%;
+    }
+    70%{
+        top: 90%;
+        left: 70%; 
+    }
+    100%{
+        top: 15%;
+        left: 110%;
+    }
+}
